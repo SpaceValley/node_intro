@@ -1,5 +1,3 @@
-export const sendError = (status, message, res) => res.status(status).send({
-  error: { message }
-})
+const sendError = res => ({ status, message }) => res.status(status).send(message)
 
-export const sendInvalidInputError = res => sendError(422, 'Invalid input', res)
+const sendResponse = res => payload => res.send(payload)

@@ -1,12 +1,14 @@
+require('dotenv').config();
 import express from 'express'
-const app = express()
+import cors from 'cors'
+import bodyParser from 'body-parser';
+import router from 'routes/';
 
-import bodyParser from 'body-parser'
-import { PORT } from 'constants/'
-import router from 'routes/'
+const app = express();
 
+app.use(cors());
+app.use(bodyParser.json());
+app.use(router);
 
-app.use(bodyParser.json())
-app.use(router)
-
-app.listen(PORT, () => console.log(`Server has started on port ${PORT}.`))
+const { APP_PORT } = process.env;
+app.listen(APP_PORT, () => console.log(`Server has started on port ${APP_PORT}.`));

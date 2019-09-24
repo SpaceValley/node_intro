@@ -40,6 +40,7 @@ export default {
       models:      withSrc('models'),
       routes:      withSrc('routes'),
       utils:       withSrc('utils'),
+	  errors:      withSrc('errors'),
     },
   },
   externals: [nodeExternals()],

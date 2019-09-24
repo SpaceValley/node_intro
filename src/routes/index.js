@@ -1,14 +1,14 @@
-import express from 'express';
+import express from 'express'
 
-import usersRouter from './users';
-import postsRouter from './posts';
-import commentsRouter from './comments';
+import userRouter from './users'
+import authRouter from './auth'
 
-const router = express.Router();
+const router = express.Router()
 
-router.use('/users', usersRouter);
-router.use('/posts', postsRouter);
-router.use('/comments', commentsRouter);
+router.use('/users', userRouter)
+router.use('/auth', authRouter)
+// router.use('/posts', postsRouter)
+// router.use('/comments', commentsRouter)
 
 
 
